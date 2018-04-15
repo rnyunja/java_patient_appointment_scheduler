@@ -5,7 +5,6 @@ package com.src.patients.pkg.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,16 +19,18 @@ import javax.servlet.http.HttpSession;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import com.src.patients.pkg.LoginController;
 
 /**
- * @author ncr_r
+ * @author Rogers Nyunja
  *
  */
+//@RunWith(Cucumber.class)
+//@Cucumber.Options(format={"SimpleHtmlReport:report/smokeTest.html"},tags={"@smokeTest",”@WhenLogingAsAClient”})
+
 public class WhenLogingAsAClient extends Mockito{
 	
     private HttpServletRequest request;
@@ -106,7 +107,7 @@ public class WhenLogingAsAClient extends Mockito{
 
 //        new LoginController().doPost(request, response);
 
-        verify(request, atLeast(1)).getParameter("username"); // only if you want to verify username was called...
+        verify(request, atLeast(1)).getParameter("username"); // only verify username was called...
         //stringWriter.flush(); // it may not have been flushed yet...
         assertTrue(request.getParameter("username").contains("patient"));
 	}
