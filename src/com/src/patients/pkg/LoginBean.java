@@ -4,7 +4,7 @@
 package com.src.patients.pkg;
 
 /**
- * @author ncr_r
+ * @author Rogers Nyunja
  *
  */
 
