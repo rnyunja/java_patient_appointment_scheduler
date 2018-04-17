@@ -48,7 +48,10 @@ public class PatientAppointmentController extends HttpServlet {
 		String apptTime = request.getParameter("time");
 		String apptReason = request.getParameter("apptReason");
 		
-		if(doctor.isEmpty() || fname.isEmpty() || lname.isEmpty() || address.isEmpty() || address2.isEmpty() || city.isEmpty() || state.isEmpty() || zipcode.isEmpty() || phone.isEmpty() || email.isEmpty()  || todaysDate.isEmpty() || apptReason.isEmpty() || apptDate.isEmpty() || apptTime.isEmpty())
+		if(doctor.isEmpty() || fname.isEmpty() || lname.isEmpty() || address.isEmpty() || 
+				address2.isEmpty() || city.isEmpty() || state.isEmpty() || zipcode.isEmpty() || 
+				phone.isEmpty() || email.isEmpty()  || todaysDate.isEmpty() || apptReason.isEmpty() || 
+				apptDate.isEmpty() || apptTime.isEmpty())
 		{
 			//Stay on the same form page
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");

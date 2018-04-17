@@ -50,7 +50,7 @@ public class LoginController extends HttpServlet {
 				response.addCookie(cook2);
 				
 				PrintWriter out= response.getWriter();
-				out.write("Login successfull...");
+				out.write("Login successful...");
 				
 				//Redirect to appointment form
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
