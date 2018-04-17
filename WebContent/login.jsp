@@ -12,7 +12,7 @@
 <script type="text/javascript" language="JavaScript">
 function validateForm(event)
 {
-    event.preventDefault(); // this will prevent the submit event.
+    //event.preventDefault(); // this will prevent the submit event.
     if(document.loginForm.username.value=="")
     {
       alert("User Name cannot be blank");
@@ -62,7 +62,7 @@ function validateForm(event)
 											<div>
 												<br />
 												<br /> 
-												<input id="submit" type="submit" name="Submit" value="Submit">&#32; 
+												<input id="submit" type="submit" name="submit" value="Submit">&#32; 
 												<input id="reset" name="reset" type="reset" value="clear"> <br>
 											</div>
 										</td>
