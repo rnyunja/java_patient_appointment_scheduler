@@ -1,6 +1,7 @@
-package com.src.patients.pkg;
+package com.patients.pkg;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,33 +10,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CreatePatientAppointmentController
+ * Servlet implementation class PatientAppointmentController
  */
-public class CreatePatientAppointmentController extends HttpServlet {
+public class PatientAppointmentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreatePatientAppointmentController() {
+    public PatientAppointmentController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		response.setContentType("text/html");
 		
+		//Get parameter values from form
 		String doctor = request.getParameter("doctor");
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
@@ -47,22 +44,25 @@ public class CreatePatientAppointmentController extends HttpServlet {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String todaysDate = request.getParameter("today");
-		String apptDate = request.getParameter("appointment");
+		String apptDate = request.getParameter("apptDate");
 		String apptTime = request.getParameter("time");
 		String apptReason = request.getParameter("apptReason");
 		
-		if(doctor.isEmpty() || fname.isEmpty() || lname.isEmpty() || address.isEmpty() || 
-				address2.isEmpty() || city.isEmpty() || state.isEmpty() || zipcode.isEmpty() ||
-				phone.isEmpty() || email.isEmpty() || todaysDate.isEmpty() || apptReason.isEmpty() ||
-				todaysDate.isEmpty() || apptDate.isEmpty() || apptTime.isEmpty() || state.isEmpty())
+		if(doctor.isEmpty() || fname.isEmpty() || lname.isEmpty() || address.isEmpty() || address2.isEmpty() || city.isEmpty() || state.isEmpty() || zipcode.isEmpty() || phone.isEmpty() || email.isEmpty()  || todaysDate.isEmpty() || apptReason.isEmpty() || apptDate.isEmpty() || apptTime.isEmpty())
 		{
-			RequestDispatcher req = request.getRequestDispatcher("display_appointment_details.jsp");
-			req.include(request, response);
+			//Stay on the same form page
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
+			requestDispatcher.include(request, response);
 		}
 		else
 		{
-			RequestDispatcher req = request.getRequestDispatcher("error.jsp");
-			req.forward(request, response);
+			PrintWriter out= response.getWriter();
+			out.write("Scheduling successfull...");
+			
+			//Redirect to display page
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("display_appointment_details.jsp");
+			requestDispatcher.forward(request, response);
+			
 		}
 		
 /*		// get response writer
@@ -89,7 +89,6 @@ public class CreatePatientAppointmentController extends HttpServlet {
         htmlResponse += "</head>";
         htmlResponse += "</html>";
          
-        // return response
         writer.println(htmlResponse);*/
 	}
 

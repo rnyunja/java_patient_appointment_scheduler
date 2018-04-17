@@ -23,7 +23,7 @@
 </head>
 <body>
 	<h1>Patient Appointment Request Form</h1>
-	<form action="CreatePatientAppointmentController" method="post">
+	<form action="PatientAppointmentController" method="post">
 		<table style="with: 50%">
 			<tr>
 				<td>Select your doctor</td>
@@ -49,6 +49,18 @@
 			<tr>
 				<td>Address 2</td>
 				<td><input type="text" name="address2" /></td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td><input type="text" name="city" /></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td><input type="text" name="state" /></td>
+			</tr>
+			<tr>
+				<td>Zip Code</td>
+				<td><input type="text" name="zipcode" /></td>
 			</tr>
 			<tr>
 				<td>Phone Number</td>

@@ -19,6 +19,12 @@
 			<td>Street Address : <%=request.getParameter("address")%> <%=request.getParameter("address2")%></td>
 		</tr>
 		<tr>
+			<td>City : <%=request.getParameter("city")%> 
+				State : <%=request.getParameter("state")%>
+				Zip Code : <%=request.getParameter("zipcode")%>
+				</td>
+		</tr>
+		<tr>
 			<td>Phone Number : <%=request.getParameter("phone")%></td>
 		</tr>
 		<tr>
@@ -31,7 +37,7 @@
 			<td>Reason for visit : <%=request.getParameter("apptReason")%></td>
 		</tr>
 		<tr>
-			<td>Appointment Date : <%=request.getParameter("appointment")%></td>
+			<td>Appointment Date : <%=request.getParameter("apptDate")%></td>
 		</tr>
 		<tr>
 			<td>Appointment Time : <%=request.getParameter("time")%></td>
