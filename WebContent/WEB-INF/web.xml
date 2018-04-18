@@ -15,7 +15,7 @@
   
   <servlet>
     <description>Handles login authentication</description> 
-    <display-name>LoginController</display-name>
+    <display-name>Login</display-name>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>com.patients.pkg.LoginController</servlet-class>
   </servlet>
@@ -26,7 +26,7 @@
   
   <servlet>
      <description>Takes on details of an appointment</description>
-    <display-name>PatientAppointmentController</display-name>
+    <display-name>AppointmentForm</display-name>
     <servlet-name>PatientAppointmentController</servlet-name>
     <servlet-class>com.patients.pkg.PatientAppointmentController</servlet-class>
   </servlet>

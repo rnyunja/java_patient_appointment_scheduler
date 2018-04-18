@@ -52,7 +52,7 @@ input.ng-dirty {
 										<td height="200" align="center" bgcolor="#CCCCCC">
 											<div align="center">
 												<strong style="text-align: right">User Name:</strong> 
-												<input id="usernameId" type="text" name="username" ng-model="username" required>
+												<input class="username" id="usernameId" type="text" name="username" ng-model="username" required>
 												<span style="color:red" ng-show="loginForm.username.$pristine || loginForm.username.$invalid">
 													<span ng-show="loginForm.username.$error.required">A valid User name required.</span>
 												</span>
@@ -60,7 +60,7 @@ input.ng-dirty {
 											<br />
 											<div align="center">
 												<strong style="text-align: right">Password:&#32;</strong> 
-												<input id="passwordId" type="password" name="password" ng-model="password" required>
+												<input class="password" id="passwordId" type="password" name="password" ng-model="password" required>
 												<span style="color:red" ng-show="loginForm.password.$pristine || loginForm.password.$invalid">
 													<span ng-show="loginForm.password.$error.required">A valid Password required.</span>
 												</span>
@@ -68,7 +68,7 @@ input.ng-dirty {
 											<div>
 												<br />
 												<br /> 
-												<input id="submit" type="submit" name="submit" value="Submit"
+												<input id="submit" type="submit" name="submit" value="Login"
 														ng-disabled="loginForm.username.$pristine && loginForm.username.$invalid &&
 														loginForm.password.$pristine && loginForm.password.$invalid">&#32;
 														 

@@ -171,7 +171,7 @@ input.ng-dirty, textarea.ng-dirty{
 			</tr>
 			<tr>
 				<td>Today's Date</td>
-				<td><input class="datepicker" type="date" name="today" ng-model="today" required></td>
+				<td><input class="datepicker" type="text" name="today" ng-model="today" required></td>
 				<td>
 					<span style="color:red" ng-show="appointmentForm.today.$pristine || appointmentForm.today.$invalid">
 						<span ng-show="appointmentForm.today.$error.required">A valid date required.</span>
@@ -198,7 +198,7 @@ input.ng-dirty, textarea.ng-dirty{
 			</tr>
 			<tr>
 				<td>Appointment Time</td>
-				<td><input class="timepicker" type="time" name="time" ng-model="time" onchange="" required></td>
+				<td><input class="timepicker" type="time" name="time" ng-model="time" required></td>
 				<td>
 					<span style="color:red" ng-show="appointmentForm.time.$pristine || appointmentForm.time.$dirty || appointmentForm.time.$invalid">
 						<span ng-show="appointmentForm.time.$error.required">A valid time required.</span>
