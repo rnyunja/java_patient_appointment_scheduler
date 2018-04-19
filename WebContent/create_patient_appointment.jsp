@@ -10,12 +10,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jQuery UI Datepicker - Default functionality</title>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
@@ -66,6 +64,9 @@ input.ng-dirty, textarea.ng-dirty{
 </style> 
 
 </head>
+
+<!-- Recommended location for timekeeper src -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <body>
 	<h1>Patient Appointment Request Form</h1>
 	<form ng-app="appointmentApp"  ng-controller="validateApptCtrl" name="appointmentForm" action="PatientAppointmentController" method="post" novalidate>
@@ -198,7 +199,7 @@ input.ng-dirty, textarea.ng-dirty{
 			</tr>
 			<tr>
 				<td>Appointment Time</td>
-				<td><input class="timepicker" type="time" name="time" ng-model="time" required></td>
+				<td><input class="timepicker" type="text" name="time" ng-model="time" required></td>
 				<td>
 					<span style="color:red" ng-show="appointmentForm.time.$pristine || appointmentForm.time.$dirty || appointmentForm.time.$invalid">
 						<span ng-show="appointmentForm.time.$error.required">A valid time required.</span>
