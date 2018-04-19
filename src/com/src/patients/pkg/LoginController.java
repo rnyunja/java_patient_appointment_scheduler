@@ -3,8 +3,8 @@ package com.patients.pkg;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LoginController
  */
+
+@WebServlet("/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -20,10 +22,10 @@ public class LoginController extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      * Instantiates a new login
      */
-    public LoginController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+//    public LoginController() {
+//        super();
+//        // TODO Auto-generated constructor stub
+//    }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -53,14 +55,20 @@ public class LoginController extends HttpServlet {
 				out.write("Login successful...");
 				
 				//Redirect to appointment form
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
-				requestDispatcher.forward(request, response);
+				response.sendRedirect(request.getContextPath() + "/create_patient_appointment.jsp");
+				
+				//This does not change to the jsp page on the URL, needed for automated testing
+//				RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
+//				requestDispatcher.forward(request, response);
 			}
 			else
 			{
 				//Stay on login page
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
-				requestDispatcher.include(request, response);
+				response.sendRedirect(request.getContextPath() + "/login.jsp");
+				
+				//This does not change to the jsp page on the URL, needed for automated testing
+//				RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
+//				requestDispatcher.forward(request, response);
 				
 			}
 		} catch (Exception e) {

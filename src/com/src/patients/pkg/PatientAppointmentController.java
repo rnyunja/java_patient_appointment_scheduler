@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PatientAppointmentController
  */
+@WebServlet("/patient_appointment")
 public class PatientAppointmentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -53,9 +55,12 @@ public class PatientAppointmentController extends HttpServlet {
 				phone.isEmpty() || email.isEmpty()  || todaysDate.isEmpty() || apptReason.isEmpty() || 
 				apptDate.isEmpty() || apptTime.isEmpty())
 		{
-			//Stay on the same form page
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
-			requestDispatcher.include(request, response);
+			//Stay on the same form page, in case DOM is breached from the client
+			response. sendRedirect(request.getContextPath() + "/create_patient_appointment.jsp");
+			
+			//This does not change to the jsp page on the URL, needed for automated testing
+//			RequestDispatcher requestDispatcher = request.getRequestDispatcher("create_patient_appointment.jsp");
+//			requestDispatcher.forward(request, response);
 		}
 		else
 		{

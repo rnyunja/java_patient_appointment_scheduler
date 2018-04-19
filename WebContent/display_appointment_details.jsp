@@ -10,37 +10,40 @@
 	<h1>Your appointment is successfully confirmed!</h1>
 	<table>
 		<tr>
-			<td>Your doctor is <%=request.getParameter("fname")%></td>
+			<td>Your doctor is</td> <td width="20px"><%=request.getParameter("fname")%></td>
 		</tr>
 		<tr>
-			<td>Name : <%=request.getParameter("fname")%> <%=request.getParameter("lname")%></td>
+			<td>Name</td><td> <%=request.getParameter("fname")%> <%=request.getParameter("lname")%></td>
 		</tr>
 		<tr>
-			<td>Street Address : <%=request.getParameter("address")%> <%=request.getParameter("address2")%></td>
+			<td>Street Address</td><td><%=request.getParameter("address")%> <%=request.getParameter("address2")%></td>
 		</tr>
 		<tr>
-			<td>City : <%=request.getParameter("city")%> 
-				State : <%=request.getParameter("state")%>
-				Zip Code : <%=request.getParameter("zipcode")%>
-				</td>
+			<td>City</td><td><%=request.getParameter("city")%></td> 
+		<tr>
+			<td>State</td><td><%=request.getParameter("state")%></td>
 		</tr>
 		<tr>
-			<td>Phone Number : <%=request.getParameter("phone")%></td>
+			<td>Zip Code</td><td><%=request.getParameter("zipcode")%></td>
+		</tr>
+				
+		<tr>
+			<td>Phone Number</td><td> <%=request.getParameter("phone")%></td>
 		</tr>
 		<tr>
-			<td>Email : <%=request.getParameter("email")%></td>
+			<td>Email </td><td> <%=request.getParameter("email")%></td>
 		</tr>
 		<tr>
-			<td>Today's Date : <%=request.getParameter("today")%></td>
+			<td>Today's Date</td><td> <%=request.getParameter("today")%></td>
 		</tr>
 		<tr>
-			<td>Reason for visit : <%=request.getParameter("apptReason")%></td>
+			<td>Reason for visit</td><td> <%=request.getParameter("apptReason")%></td>
 		</tr>
 		<tr>
-			<td>Appointment Date : <%=request.getParameter("apptDate")%></td>
+			<td>Appointment Date</td><td> <%=request.getParameter("apptDate")%></td>
 		</tr>
 		<tr>
-			<td>Appointment Time : <%=request.getParameter("time")%></td>
+			<td>Appointment Time</td><td> <%=request.getParameter("time")%></td>
 		</tr>
 	</table>
 </body>
